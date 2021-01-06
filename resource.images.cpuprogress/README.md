@@ -31,29 +31,29 @@ Skin:-  Variables.xml
 	<variable name="CpuPerCorevertical7VAR">
 		<value condition="!String.IsEmpty(System.CoreUsage(7))">resource://resource.images.cpuprogress/vertical/$INFO[System.CoreUsage(7),,.png]</value>
 	</variable>
-	<variable name="CpuPerCorehotizontal0VAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(0))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(0),,.png]</value>
+	<variable name="CpuPerCorehorizontal0VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(0))">resource://resource.images.cpuprogress/horizontal/$INFO[System.CoreUsage(0),,.png]</value>
 	</variable>
-	<variable name="CpuPerCorehotizontal1VAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(1),,.png]</value>
+	<variable name="CpuPerCorehorizontal1VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.cpuprogress/horizontal/$INFO[System.CoreUsage(1),,.png]</value>
 	</variable>
-	<variable name="CpuPerCorehotizontal2VAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(2))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(2),,.png]</value>
+	<variable name="CpuPerCorehorizontal2VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(2))">resource://resource.images.cpuprogress/horizontal/$INFO[System.CoreUsage(2),,.png]</value>
 	</variable>
-	<variable name="CpuPerCorehotizontal3VAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(3))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(3),,.png]</value>
+	<variable name="CpuPerCorehorizontal3VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(3))">resource://resource.images.cpuprogress/horizontal/$INFO[System.CoreUsage(3),,.png]</value>
 	</variable>
-	<variable name="CpuPerCorehotizontal4VAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(4))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(4),,.png]</value>
+	<variable name="CpuPerCorehorizontal4VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(4))">resource://resource.images.cpuprogress/horizontal/$INFO[System.CoreUsage(4),,.png]</value>
 	</variable>
-	<variable name="CpuPerCorehotizontal5VAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(5))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(5),,.png]</value>
+	<variable name="CpuPerCorehorizontal5VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(5))">resource://resource.images.cpuprogress/horizontal/$INFO[System.CoreUsage(5),,.png]</value>
 	</variable>
-	<variable name="CpuPerCorehotizontal6VAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(6))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(6),,.png]</value>
+	<variable name="CpuPerCorehorizontal6VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(6))">resource://resource.images.cpuprogress/horizontal/$INFO[System.CoreUsage(6),,.png]</value>
 	</variable>
-	<variable name="CpuPerCorehotizontal7VAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(7))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(7),,.png]</value>
+	<variable name="CpuPerCorehorizontal7VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(7))">resource://resource.images.cpuprogress/horizontal/$INFO[System.CoreUsage(7),,.png]</value>
 	</variable>
 ```
 
@@ -74,13 +74,13 @@ Skin:-  Variables.xml
   <top>620</top>
   <width>300</width>
   <height>18</height>
-  <texture colordiffuse="yellow" border="3">$VAR[CpuPerCorehotizontal0VAR]</texture>
+  <texture colordiffuse="yellow" border="3">$VAR[CpuPerCorehorizontal0VAR]</texture>
 </control>
 ```
 
 There are 2 options **vertical & horizontal**
 ```
-<value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(1),,.png]</value>
+<value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.cpuprogress/horizontal/$INFO[System.CoreUsage(1),,.png]</value>
 
 <value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.cpuprogress/vertical/$INFO[System.CoreUsage(1),,.png]</value>
 ```
