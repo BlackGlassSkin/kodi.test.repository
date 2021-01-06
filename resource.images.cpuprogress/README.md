@@ -87,8 +87,9 @@ There are 2 options **vertical & horizontal**
 **and,**
 
 ```
-resource://resource.images.progressram/vertical/border.png
-resource://resource.images.progressram/horizontal/border.png
+resource://resource.images.cpuprogress/vertical/border.png
+resource://resource.images.cpuprogress/horizontal/border.png
+resource://resource.images.cpuprogress/circle/empty.png
 ```
 It is not packed into .xbt because it goes from 3 megabytes to nearly 10 megabytes
 I see no point in increasing the package"# kodi.test.repository" 
