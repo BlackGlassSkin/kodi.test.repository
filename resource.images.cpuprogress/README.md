@@ -7,29 +7,53 @@
 Skin:-  Variables.xml
 
 ```
- <variable name="CpuPerCoreZeroVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(0))">resource://resource.images.progressram/hotizontal/$INFO[System.CoreUsage(0),,.png]</value>
+        <variable name="CpuPerCorevertical0VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(0))">resource://resource.images.cpuprogress/vertical/$INFO[System.CoreUsage(0),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreOneVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.progressram/hotizontal/$INFO[System.CoreUsage(1),,.png]</value>
+	<variable name="CpuPerCorevertical1VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.cpuprogress/vertical/$INFO[System.CoreUsage(1),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreTwoVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(2))">resource://resource.images.progressram/hotizontal/$INFO[System.CoreUsage(2),,.png]</value>
+	<variable name="CpuPerCorevertical2VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(2))">resource://resource.images.cpuprogress/vertical/$INFO[System.CoreUsage(2),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreThreeVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(3))">resource://resource.images.progressram/hotizontal/$INFO[System.CoreUsage(3),,.png]</value>
+	<variable name="CpuPerCorevertical3VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(3))">resource://resource.images.cpuprogress/vertical/$INFO[System.CoreUsage(3),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreFourVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(4))">resource://resource.images.progressram/$INFO[System.CoreUsage(4),,.png]</value>
+	<variable name="CpuPerCorevertical4VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(4))">resource://resource.images.cpuprogress/vertical/$INFO[System.CoreUsage(4),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreFiveVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(5))">resource://resource.images.progressram/hotizontal/$INFO[System.CoreUsage(5),,.png]</value>
+	<variable name="CpuPerCorevertical5VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(5))">resource://resource.images.cpuprogress/vertical/$INFO[System.CoreUsage(5),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreSixVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(6))">resource://resource.images.progressram/hotizontal/$INFO[System.CoreUsage(6),,.png]</value>
+	<variable name="CpuPerCorevertical6VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(6))">resource://resource.images.cpuprogress/vertical/$INFO[System.CoreUsage(6),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreSevenVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(7))">resource://resource.images.progressram/hotizontal/$INFO[System.CoreUsage(7),,.png]</value>
+	<variable name="CpuPerCorevertical7VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(7))">resource://resource.images.cpuprogress/vertical/$INFO[System.CoreUsage(7),,.png]</value>
+	</variable>
+	<variable name="CpuPerCorehotizontal0VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(0))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(0),,.png]</value>
+	</variable>
+	<variable name="CpuPerCorehotizontal1VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(1),,.png]</value>
+	</variable>
+	<variable name="CpuPerCorehotizontal2VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(2))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(2),,.png]</value>
+	</variable>
+	<variable name="CpuPerCorehotizontal3VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(3))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(3),,.png]</value>
+	</variable>
+	<variable name="CpuPerCorehotizontal4VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(4))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(4),,.png]</value>
+	</variable>
+	<variable name="CpuPerCorehotizontal5VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(5))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(5),,.png]</value>
+	</variable>
+	<variable name="CpuPerCorehotizontal6VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(6))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(6),,.png]</value>
+	</variable>
+	<variable name="CpuPerCorehotizontal7VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(7))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(7),,.png]</value>
 	</variable>
 ```
 
@@ -40,15 +64,25 @@ Skin:-  Variables.xml
   <top>620</top>
   <width>300</width>
   <height>18</height>
-  <texture colordiffuse="yellow" border="3">$VAR[CpuPerCoreZeroVAR]</texture>
+  <texture colordiffuse="yellow" border="3">$VAR[CpuPerCorevertical0VAR]</texture>
+</control>
+```
+
+```
+<control type="image">
+  <left>100</left>
+  <top>620</top>
+  <width>300</width>
+  <height>18</height>
+  <texture colordiffuse="yellow" border="3">$VAR[CpuPerCorehotizontal0VAR]</texture>
 </control>
 ```
 
 There are 2 options **vertical & horizontal**
 ```
-<value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.progressram/hotizontal/$INFO[System.CoreUsage(1),,.png]</value>
+<value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.cpuprogress/hotizontal/$INFO[System.CoreUsage(1),,.png]</value>
 
-<value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.progressram/vertical/$INFO[System.CoreUsage(1),,.png]</value>
+<value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.cpuprogress/vertical/$INFO[System.CoreUsage(1),,.png]</value>
 ```
 **and,**
 
@@ -71,29 +105,29 @@ I see no point in increasing the package"# kodi.test.repository"
 Skin:-  Variables.xml
 
 ```
- <variable name="CpuPerCoreZeroVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(0))">resource://resource.images.circlecpuprogress/$INFO[System.CoreUsage(0),,.png]</value>
+       <variable name="CpuPerCorecircle0VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(0))">resource://resource.images.cpuprogress/circle/$INFO[System.CoreUsage(0),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreOneVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.circlecpuprogress/$INFO[System.CoreUsage(1),,.png]</value>
+	<variable name="CpuPerCorecircle1VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(1))">resource://resource.images.cpuprogress/circle/$INFO[System.CoreUsage(1),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreTwoVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(2))">resource://resource.images.circlecpuprogress/$INFO[System.CoreUsage(2),,.png]</value>
+	<variable name="CpuPerCorecircle2VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(2))">resource://resource.images.cpuprogress/circle/$INFO[System.CoreUsage(2),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreThreeVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(3))">resource://resource.images.circlecpuprogress/hotizontal/$INFO[System.CoreUsage(3),,.png]</value>
+	<variable name="CpuPerCorecircle3VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(3))">resource://resource.images.cpuprogress/circle/$INFO[System.CoreUsage(3),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreFourVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(4))">resource://resource.images.circlecpuprogress/$INFO[System.CoreUsage(4),,.png]</value>
+	<variable name="CpuPerCorecircle4VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(4))">resource://resource.images.cpuprogress/circle/$INFO[System.CoreUsage(4),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreFiveVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(5))">resource://resource.images.circlecpuprogress/$INFO[System.CoreUsage(5),,.png]</value>
+	<variable name="CpuPerCorecircle5VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(5))">resource://resource.images.cpuprogress/circle/$INFO[System.CoreUsage(5),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreSixVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(6))">resource://resource.images.circlecpuprogress/$INFO[System.CoreUsage(6),,.png]</value>
+	<variable name="CpuPerCorecircle6VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(6))">resource://resource.images.cpuprogress/circle/$INFO[System.CoreUsage(6),,.png]</value>
 	</variable>
-	<variable name="CpuPerCoreSevenVAR">
-		<value condition="!String.IsEmpty(System.CoreUsage(7))">resource://resource.images.circlecpuprogress/$INFO[System.CoreUsage(7),,.png]</value>
+	<variable name="CpuPerCorecircle7VAR">
+		<value condition="!String.IsEmpty(System.CoreUsage(7))">resource://resource.images.cpuprogress/circle/$INFO[System.CoreUsage(7),,.png]</value>
 	</variable>
 ```
 
@@ -111,7 +145,7 @@ Skin:-  Variables.xml
 ##in the "percent" folder there are icons from 0 to 100%
 
 ```
-<texture>resource://resource.images.circlecpuprogress/percent/$INFO[System.CPUUsage].png<texture>
+<texture>resource.images.cpuprogress/circle/percent/$INFO[System.CPUUsage].png<texture>
 
 ```
 It is not packed into .xbt because increases the size of the package
