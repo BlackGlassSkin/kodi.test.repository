@@ -1237,7 +1237,7 @@
     move-result-object v0
 
     .line 75
-    const-string v2, "http://www.google.com/placeholder"
+    const-string v2, ""
 
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
