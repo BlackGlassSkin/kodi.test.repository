@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" package="com.google.android.tvlauncher" platformBuildVersionCode="28" platformBuildVersionName="9">
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL"/>
+    <uses-permission android:name="com.android.providers.tv.permission.ACCESS_ALL_EPG_DATA"/>
+    <uses-permission android:name="com.android.providers.tv.permission.WRITE_EPG_DATA"/>
+    <uses-permission android:name="com.android.providers.tv.permission.READ_EPG_DATA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.NOTIFY_TV_INPUTS"/>
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.BIND_APPWIDGET"/>
+    <uses-permission android:name="android.permission.CHANGE_HDMI_CEC_ACTIVE_SOURCE"/>
+    <uses-permission android:name="android.permission.READ_CONTENT_RATING_SYSTEMS"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" android:required="false"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" android:required="false"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER" android:required="false"/>
+    <uses-permission android:name="com.google.android.assistant.READ_HOTWORD_STATE"/>
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-feature android:name="android.software.leanback" android:required="true"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <application android:allowBackup="false" android:banner="@drawable/ic_tv_banner" android:debuggable="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.google.android.tvlauncher.application.TvLauncherApplication" android:supportsRtl="true" android:theme="@style/AppTheme" android:usesCleartextTraffic="true">
+        <meta-data android:name="com.google.android.tvlauncher.LauncherGlideModule" android:value="GlideModule"/>
+        <activity android:configChanges="keyboard" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.google.android.tvlauncher.MainActivity" android:resumeWhilePausing="true" android:screenOrientation="landscape" android:stateNotNeeded="true" android:taskAffinity=".TvLauncher">
+            <intent-filter android:priority="2">
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.HOME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.MONKEY"/>
+            </intent-filter>
+        </activity>
+        <receiver android:exported="false" android:name="com.google.android.tvlauncher.appsview.data.MarketUpdateReceiver" android:permission="com.google.android.tv.permission.ROUTE_MARKET_UPDATE" android:required="false">
+            <intent-filter>
+                <action android:name="com.android.launcher.action.ACTION_PACKAGE_ENQUEUED" android:required="false"/>
+                <action android:name="com.android.launcher.action.ACTION_PACKAGE_DOWNLOADING" android:required="false"/>
+                <action android:name="com.android.launcher.action.ACTION_PACKAGE_INSTALLING" android:required="false"/>
+                <action android:name="com.android.launcher.action.ACTION_PACKAGE_DEQUEUED" android:required="false"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.google.android.tvlauncher.util.DebugReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.tvlauncher.action.DEBUG"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="com.google.android.tvlauncher.notifications.NotificationsSidePanelActivity" android:noHistory="true" android:theme="@style/Theme.Settings.SidePanelCompat">
+            <intent-filter>
+                <action android:name="com.android.tvlauncher.NOTIFICATIONS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/add_channels_announcement" android:name="com.google.android.tvlauncher.settings.AppChannelPermissionActivity" android:theme="@style/Theme.Settings.SidePanelCompat"/>
+        <activity android:name="com.google.android.tvlauncher.settings.FavoriteLaunchItemsActivity" android:theme="@style/Theme.Settings.SidePanelCompat"/>
+        <activity android:exported="true" android:name="com.google.android.tvlauncher.settings.OpenSourceActivity" android:screenOrientation="landscape" android:theme="@style/Theme.AppCompat.Leanback">
+            <intent-filter>
+                <action android:name="com.android.tv.action.VIEW_LICENSES"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation" android:excludeFromRecents="true" android:exported="true" android:name="com.google.android.tvlauncher.settings.HomeScreenSettingsActivity" android:theme="@style/Theme.Settings.SidePanelCompat">
+            <intent-filter>
+                <action android:name="com.google.android.leanbacklauncher.SETTINGS"/>
+                <action android:name="com.google.android.tvlauncher.SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.google.android.tvlauncher.inputs.InputsPanelActivity" android:taskAffinity="" android:theme="@style/Theme.Settings.SidePanelCompat">
+            <intent-filter>
+                <action android:name="com.android.tv.action.VIEW_INPUTS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/apps_view_title" android:launchMode="singleTask" android:name="com.google.android.tvlauncher.appsview.AppsViewActivity" android:taskAffinity="" android:theme="@style/Theme.Settings.SidePanelCompat">
+            <intent-filter>
+                <action android:name="android.intent.action.ALL_APPS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/add_app_link_label" android:name="com.google.android.tvlauncher.appsview.AddAppLinkActivity" android:theme="@style/ConfirmationDialogCompat">
+            <intent-filter android:priority="999">
+                <action android:name="com.android.tv.applink.action.ADD_APP_LINK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/remove_app_link_label" android:name="com.google.android.tvlauncher.appsview.RemoveAppLinkActivity" android:theme="@style/ConfirmationDialogCompat">
+            <intent-filter android:priority="999">
+                <action android:name="com.android.tv.applink.action.REMOVE_APP_LINK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="false" android:label="@string/featured_carousel_why_this_ad" android:name="com.google.android.tvlauncher.home.featuredcarousel.WhyThisAdActivity" android:theme="@style/Theme.Settings.SidePanelCompat"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.tvlauncher.home.HomeScreenChannelsUpdateDialogActivity" android:theme="@style/Theme.DialogCompat"/>
+        <service android:exported="true" android:name="com.google.android.tvlauncher.appsview.data.StopOutOfBoxOrderingJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="true" android:name="com.google.android.tvlauncher.util.NotifyRefreshOemConfigurationDataJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.tvlauncher.home.discover.entity.EntityDetailsActivity"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.tvlauncher.targetedpromotions.RedeemTargetedPromotionActivity"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.tvlauncher.home.discover.preferenceelicitation.PreferenceElicitationActivity"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.tvlauncher.home.discover.derivedentitlement.DerivedEntitlementActivity" android:theme="@style/Theme.DerivedEntitlement"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:label="@string/onboarding_label" android:name="com.google.android.tvlauncher.home.discover.onboarding.OnboardingActivity" android:theme="@style/Theme.AppCompat.Leanback"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.tvlauncher.settings.AccountSignOutConfirmationActivity"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.tvlauncher.settings.ViewPermissionsActivity"/>
+        <receiver android:exported="false" android:name="com.google.android.tvlauncher.home.discover.tutorial.TutorialNotificationReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.tvlauncher.home.discover.tutorial.action.DISMISS_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.android.tvlauncher.home.WaaNotificationReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.tvlauncher.home.action.DISMISS_WAA_REENABLEMENT_NOTIFICATION"/>
+                <action android:name="com.google.android.tvlauncher.home.action.DETAILS_WAA_REENABLEMENT_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.android.tvlauncher.home.feedback.FeedbackNotificationReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.tvlauncher.home.feedback.action.CLICK_FEEDBACK_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:exported="false" android:label="@string/discover_tutorial_label" android:name="com.google.android.tvlauncher.home.discover.tutorial.TutorialActivity" android:noHistory="true"/>
+        <meta-data android:name="com.google.android.gms.phenotype.registration.xml:com.google.android.tvlauncher" android:resource="@xml/com_google_android_tvlauncher_phenotype"/>
+        <service android:enabled="false" android:exported="false" android:name="com.google.android.libraries.phenotype.registration.PhenotypeMetadataHolderService" android:process="">
+            <intent-filter>
+                <action android:name="com.google.android.libraries.phenotype.registration.PhenotypeMetadataHolderService"/>
+            </intent-filter>
+            <meta-data android:name="com.google.android.gms.phenotype.registration.binarypb:com.google.android.tvlauncher" android:resource="@raw/com_google_android_tvlauncher_registration_info"/>
+            <meta-data android:name="com.google.android.gms.phenotype.registration.binarypb:com.google.android.libraries.notifications" android:resource="@raw/com_google_android_libraries_notifications_registration_info"/>
+            <meta-data android:name="com.google.android.gms.phenotype.registration.binarypb:com.google.android.libraries.personalization.footprints" android:resource="@raw/com_google_android_libraries_personalization_footprints_registration_info"/>
+            <meta-data android:name="com.google.android.gms.phenotype.registration.binarypb:com.google.android.libraries.consentverifier" android:resource="@raw/com_google_android_libraries_consentverifier_registration_info"/>
+            <meta-data android:name="com.google.android.gms.phenotype.registration.binarypb:com.google.android.libraries.notifications.platform" android:resource="@raw/com_google_android_libraries_notifications_platform_registration_info"/>
+            <meta-data android:name="com.google.android.gms.phenotype.heterodyne_info.binarypb:com.google.android.libraries.performance.primes" android:resource="@raw/com_google_android_libraries_performance_primes_heterodyne_info"/>
+            <meta-data android:name="com.google.android.gms.phenotype.registration.binarypb:com.google.android.libraries.performance.primes" android:resource="@raw/com_google_android_libraries_performance_primes_registration_info"/>
+        </service>
+        <meta-data android:name="com.google.android.gms.phenotype.registration.xml:com.google.android.libraries.notifications" android:resource="@xml/com_google_android_libraries_notifications_phenotype"/>
+        <meta-data android:name="com.google.android.gms.phenotype.registration.xml:com.google.android.libraries.personalization.footprints" android:resource="@xml/com_google_android_libraries_personalization_footprints_phenotype"/>
+        <meta-data android:name="com.google.android.gms.phenotype.registration.xml:com.google.android.libraries.consentverifier" android:resource="@xml/com_google_android_libraries_consentverifier_phenotype"/>
+        <meta-data android:name="com.google.android.gms.phenotype.registration.xml:com.google.android.libraries.notifications.platform" android:resource="@xml/com_google_android_libraries_notifications_platform_phenotype"/>
+        <meta-data android:name="com.google.android.gms.phenotype.registration.xml:com.google.android.libraries.performance.primes" android:resource="@xml/com_google_android_libraries_performance_primes_phenotype"/>
+        <receiver android:exported="false" android:name="com.google.android.libraries.social.silentfeedback.nobinder.SilentFeedbackReceiver" android:process=":crash_report"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:exported="true" android:name="com.google.android.libraries.notifications.entrypoints.accountchanged.AccountChangedReceiver">
+            <intent-filter>
+                <action android:name="android.accounts.LOGIN_ACCOUNTS_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.google.android.libraries.notifications.entrypoints.gcm.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter android:priority="99">
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.google.android.libraries.notifications.entrypoints.localechanged.LocaleChangedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.google.android.libraries.notifications.entrypoints.restart.RestartReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayBroadcastReceiver"/>
+        <activity android:exported="false" android:name="com.google.android.libraries.notifications.entrypoints.systemtray.SystemTrayActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="false" android:name="com.google.android.libraries.notifications.executor.impl.basic.ChimeExecutorApiService"/>
+        <receiver android:exported="false" android:name="com.google.android.libraries.performance.primes.transmitter.LifeboatReceiver" android:process=":primes_lifeboat"/>
+        <receiver android:exported="true" android:name="com.google.android.libraries.phenotype.client.stable.AccountRemovedBroadcastReceiver" android:process="">
+            <intent-filter>
+                <action android:name="android.accounts.action.ACCOUNT_REMOVED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.google.android.libraries.phenotype.client.stable.PhenotypeUpdateBackgroundBroadcastReceiver" android:permission="com.google.android.gms.permission.PHENOTYPE_UPDATE_BROADCAST" android:process="">
+            <intent-filter>
+                <action android:name="com.google.android.gms.phenotype.UPDATE"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <service android:enabled="false" android:exported="false" android:name="com.google.android.build.data.PropertiesServiceHolder" android:process="">
+            <intent-filter>
+                <action android:name="com.google.android.build.data.Properties"/>
+            </intent-filter>
+            <meta-data android:name="com.google.android.build.data.properties" android:resource="@raw/build_data"/>
+        </service>
+    </application>
+</manifest>
