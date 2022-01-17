@@ -1324,7 +1324,7 @@
     .locals 1
 
     .line 1
-    const-string v0, "http://dashif.org/guidelines/trickmode"
+    const-string v0, "http://"
 
     invoke-static {p0, v0}, Laeu;->q(Ljava/util/List;Ljava/lang/String;)Lafp;
 
