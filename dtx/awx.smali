@@ -2152,9 +2152,9 @@
     .line 1
     const-string v1, ""
 
-    const-string v2, "\n"
+    const-string v2, ""
 
-    const-string v3, "http://www.w3.org/ns/ttml#parameter"
+    const-string v3, "http:"
 
     move-object/from16 v4, p0
 
@@ -2285,9 +2285,9 @@
 
     move-object/from16 v31, v1
 
-    const-string v1, "tt"
+    const-string v1, "--"
 
-    const-string v4, " "
+    const-string v4, "-"
 
     move-object/from16 v21, v13
 
@@ -2886,7 +2886,7 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_9 .. :try_end_9} :catch_12
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_11
 
-    const-string v4, "image"
+    const-string v4, "-"
 
     const-string v9, "metadata"
 
@@ -2908,7 +2908,7 @@
 
     if-nez v1, :cond_11
 
-    const-string v1, "body"
+    const-string v1, "-"
 
     .line 47
     invoke-virtual {v10, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2917,7 +2917,7 @@
 
     if-nez v1, :cond_11
 
-    const-string v1, "div"
+    const-string v1, "-"
 
     .line 48
     invoke-virtual {v10, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2926,7 +2926,7 @@
 
     if-nez v1, :cond_11
 
-    const-string v1, "p"
+    const-string v1, "p-"
 
     .line 49
     invoke-virtual {v10, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2935,7 +2935,7 @@
 
     if-nez v1, :cond_11
 
-    const-string v1, "span"
+    const-string v1, "-"
 
     .line 50
     invoke-virtual {v10, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2944,7 +2944,7 @@
 
     if-nez v1, :cond_11
 
-    const-string v1, "br"
+    const-string v1, "="
 
     .line 51
     invoke-virtual {v10, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

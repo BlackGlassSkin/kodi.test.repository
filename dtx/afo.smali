@@ -2196,7 +2196,7 @@
     .line 3
     iget-object v2, v2, Lafp;->a:Ljava/lang/String;
 
-    const-string v3, "http://dashif.org/guidelines/trickmode"
+    const-string v3, "http://"
 
     invoke-static {v3, v2}, Lddw;->j(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -2962,7 +2962,7 @@
     .line 7
     iget-object v5, v4, Lafp;->a:Ljava/lang/String;
 
-    const-string v6, "http://dashif.org/guidelines/last-segment-number"
+    const-string v6, "http://"
 
     invoke-static {v6, v5}, Lddw;->j(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 

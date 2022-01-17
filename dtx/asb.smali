@@ -389,7 +389,7 @@
 
     move-result-object v3
 
-    const-string v5, "http://ns.adobe.com/xap/1.0/"
+    const-string v5, "http://"
 
     invoke-virtual {v5, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

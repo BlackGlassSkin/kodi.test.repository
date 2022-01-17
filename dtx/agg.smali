@@ -199,7 +199,7 @@
 
     const-string v2, "SOAPAction"
 
-    const-string v7, "http://schemas.microsoft.com/DRM/2007/03/protocols/AcquireLicense"
+    const-string v7, "http://"
 
     .line 14
     invoke-interface {v6, v2, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
